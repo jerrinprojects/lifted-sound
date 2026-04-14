@@ -1,17 +1,10 @@
-.section {
-  padding: 120px 48px;
-  position: relative;
-  overflow: hidden;
-}
+/* About — Spotify-inspired: dark surfaces, green accents only functional */
 
-.section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 600px 400px at 10% 50%, rgba(124, 58, 255, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 300px at 90% 50%, rgba(255, 45, 120, 0.06) 0%, transparent 70%);
-  pointer-events: none;
+.section {
+  padding: 100px 40px;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-sub);
+  border-bottom: 1px solid var(--border-sub);
 }
 
 .inner {
@@ -19,84 +12,82 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 72px;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 .label {
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #ff2d78;
-  margin-bottom: 16px;
+  color: var(--green);
+  margin-bottom: 14px;
 }
 
 .title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 6vw, 80px);
+  font-size: clamp(44px, 5.5vw, 72px);
   letter-spacing: 4px;
+  color: var(--text);
   line-height: 1;
-  color: #f0eeff;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .body {
-  font-size: 17px;
-  color: #8884aa;
-  line-height: 1.8;
-  margin-bottom: 36px;
-  max-width: 440px;
+  font-size: 16px;
+  color: var(--text-sub);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 420px;
 }
 
+/* Outlined pill button — Spotify secondary style */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: #f0eeff;
+  color: var(--text);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 14px 32px;
-  border-radius: 100px;
-  border: 1px solid rgba(240, 238, 255, 0.2);
-  transition: border-color 0.2s, background 0.2s;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  transition: border-color 0.15s, background 0.15s;
 }
 
 .btn:hover {
-  border-color: rgba(240, 238, 255, 0.5);
-  background: rgba(240, 238, 255, 0.05);
+  border-color: var(--text);
+  background: rgba(255,255,255,0.05);
 }
 
 /* Values grid */
 .values {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 12px;
 }
 
+/* #181818 cards — Spotify dark card */
 .valueCard {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: flex-start;
-  background: rgba(13, 13, 31, 0.7);
-  border: 1px solid rgba(124, 58, 255, 0.1);
-  border-radius: 16px;
+  background: var(--bg-mid);
+  border-radius: 8px;
   padding: 20px;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: background 0.15s, box-shadow 0.15s;
 }
 
 .valueCard:hover {
-  border-color: rgba(124, 58, 255, 0.3);
-  transform: translateY(-3px);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
 }
 
 .valueIcon {
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -105,29 +96,21 @@
   display: block;
   font-size: 14px;
   font-weight: 700;
-  color: #f0eeff;
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
+  color: var(--text);
+  margin-bottom: 5px;
 }
 
 .valueDesc {
   font-size: 13px;
-  color: #7b7a9e;
+  color: var(--text-sub);
   line-height: 1.5;
 }
 
 @media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+  .inner { grid-template-columns: 1fr; gap: 48px; }
 }
 
 @media (max-width: 640px) {
-  .section {
-    padding: 80px 20px;
-  }
-  .values {
-    grid-template-columns: 1fr;
-  }
+  .section { padding: 72px 16px; }
+  .values { grid-template-columns: 1fr; }
 }

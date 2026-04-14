@@ -1,3 +1,5 @@
+/* Hero — Spotify-inspired: dark immersive, single green accent */
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -6,56 +8,26 @@
   justify-content: center;
   overflow: hidden;
   text-align: center;
+  background: var(--bg-base);
 }
 
-/* Ambient orbs */
-.orb1 {
+/* Subtle radial glow — green-tinted, low opacity, functional */
+.glow {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 58, 255, 0.35) 0%, transparent 70%);
-  top: -100px;
-  left: -100px;
-  animation: drift1 12s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(31,255,158,0.07) 0%, transparent 65%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
   pointer-events: none;
+  animation: breathe 8s ease-in-out infinite;
 }
 
-.orb2 {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 45, 120, 0.25) 0%, transparent 70%);
-  bottom: -80px;
-  right: -80px;
-  animation: drift2 14s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.orb3 {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 240, 200, 0.18) 0%, transparent 70%);
-  top: 40%;
-  left: 60%;
-  animation: drift3 10s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes drift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 40px) scale(1.1); }
-}
-@keyframes drift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-50px, -30px) scale(1.08); }
-}
-@keyframes drift3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-40px, 50px) scale(1.15); }
+@keyframes breathe {
+  0%, 100% { transform: translate(-50%, -55%) scale(1); opacity: 0.8; }
+  50%       { transform: translate(-50%, -55%) scale(1.15); opacity: 1; }
 }
 
 /* Content */
@@ -65,134 +37,137 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   padding: 0 24px;
-  animation: fadeUp 0.9s ease both;
+  animation: fadeUp 0.7s ease both;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Eyebrow — green pill label */
 .eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #7c3aff;
-  background: rgba(124, 58, 255, 0.12);
-  border: 1px solid rgba(124, 58, 255, 0.3);
-  padding: 8px 20px;
-  border-radius: 100px;
-  animation: fadeUp 0.9s 0.1s ease both;
+  color: var(--green);
+  background: rgba(31,255,158,0.08);
+  border: 1px solid rgba(31,255,158,0.2);
+  padding: 6px 18px;
+  border-radius: 9999px;
+  animation: fadeUp 0.7s 0.05s ease both;
 }
 
+/* Main title */
 .title {
   display: flex;
   flex-direction: column;
-  line-height: 0.9;
-  gap: 0;
-  animation: fadeUp 0.9s 0.2s ease both;
+  line-height: 0.88;
+  animation: fadeUp 0.7s 0.1s ease both;
 }
 
 .line1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(96px, 18vw, 200px);
-  letter-spacing: 12px;
-  background: linear-gradient(135deg, #f0eeff 30%, #7c3aff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(88px, 16vw, 180px);
+  letter-spacing: 10px;
+  color: var(--text);
 }
 
+/* Green accent on second word — singular brand color usage */
 .line2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(96px, 18vw, 200px);
-  letter-spacing: 12px;
-  background: linear-gradient(135deg, #ff2d78 0%, #7c3aff 60%, #00f0c8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-top: -0.05em;
+  font-size: clamp(88px, 16vw, 180px);
+  letter-spacing: 10px;
+  color: var(--green);
 }
 
+/* Mission text */
 .mission {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(15px, 1.8vw, 18px);
   font-weight: 400;
+  color: var(--text-sub);
   line-height: 1.7;
-  color: #a09dc0;
-  max-width: 520px;
-  animation: fadeUp 0.9s 0.3s ease both;
+  max-width: 480px;
+  animation: fadeUp 0.7s 0.15s ease both;
 }
 
-.mission em {
-  font-style: normal;
-  color: #f0eeff;
+.mission strong {
+  color: var(--text);
   font-weight: 600;
 }
 
+/* Action buttons */
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
-  animation: fadeUp 0.9s 0.4s ease both;
+  margin-top: 8px;
+  animation: fadeUp 0.7s 0.2s ease both;
 }
 
+/* Green pill CTA — primary */
 .btnPrimary {
-  background: linear-gradient(135deg, #7c3aff, #ff2d78);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 16px 36px;
-  border-radius: 100px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 0 30px rgba(124, 58, 255, 0.4);
+  background: var(--green);
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: 9999px;
+  transition: opacity 0.15s, transform 0.15s;
+  box-shadow: 0 0 32px rgba(31,255,158,0.25);
 }
 
 .btnPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(124, 58, 255, 0.6);
+  opacity: 0.88;
+  transform: scale(1.02);
 }
 
+/* Dark pill secondary */
 .btnGhost {
-  color: #a09dc0;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 16px 36px;
-  border-radius: 100px;
-  border: 1px solid rgba(160, 157, 192, 0.25);
-  transition: border-color 0.2s, color 0.2s;
+  background: var(--bg-mid);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 14px 36px;
+  border-radius: 9999px;
+  transition: background 0.15s;
 }
 
 .btnGhost:hover {
-  border-color: rgba(160, 157, 192, 0.6);
-  color: #f0eeff;
+  background: var(--bg-card);
 }
 
-/* Scroll cue */
+/* Scroll indicator */
 .scrollCue {
-  margin-top: 16px;
-  animation: fadeUp 0.9s 0.6s ease both;
+  margin-top: 24px;
+  animation: fadeUp 0.7s 0.3s ease both;
 }
 
 .scrollCue span {
   display: block;
   width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(124, 58, 255, 0.8), transparent);
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(31,255,158,0.6), transparent);
   margin: 0 auto;
-  animation: scrollPulse 2s ease-in-out infinite;
+  animation: pulse 2.5s ease-in-out infinite;
 }
 
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(1.1); }
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
 }
 
-/* Floating music notes */
+/* Floating notes */
 .particles {
   position: absolute;
   inset: 0;
@@ -202,34 +177,28 @@
 
 .note {
   position: absolute;
-  font-size: 20px;
+  font-size: 18px;
   opacity: 0;
-  color: rgba(124, 58, 255, 0.5);
-  animation: floatNote 8s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 1.3s);
+  color: rgba(31,255,158,0.3);
+  animation: floatNote 9s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 1.5s);
 }
 
-.note:nth-child(1) { left: 8%; top: 20%; }
-.note:nth-child(2) { left: 15%; top: 65%; font-size: 14px; color: rgba(255, 45, 120, 0.4); }
-.note:nth-child(3) { left: 85%; top: 25%; font-size: 24px; }
-.note:nth-child(4) { left: 90%; top: 70%; font-size: 16px; color: rgba(0, 240, 200, 0.4); }
-.note:nth-child(5) { left: 75%; top: 15%; font-size: 18px; color: rgba(255, 45, 120, 0.35); }
-.note:nth-child(6) { left: 5%; top: 80%; font-size: 22px; color: rgba(0, 240, 200, 0.35); }
+.note:nth-child(1) { left: 6%; top: 18%; }
+.note:nth-child(2) { left: 14%; top: 70%; font-size: 12px; }
+.note:nth-child(3) { left: 86%; top: 22%; font-size: 22px; }
+.note:nth-child(4) { left: 91%; top: 68%; font-size: 14px; }
+.note:nth-child(5) { left: 78%; top: 12%; font-size: 16px; }
+.note:nth-child(6) { left: 4%;  top: 82%; font-size: 20px; }
 
 @keyframes floatNote {
-  0%   { opacity: 0; transform: translateY(0) rotate(0deg); }
-  20%  { opacity: 0.6; }
-  80%  { opacity: 0.3; }
-  100% { opacity: 0; transform: translateY(-60px) rotate(20deg); }
+  0%   { opacity: 0; transform: translateY(0); }
+  20%  { opacity: 0.5; }
+  80%  { opacity: 0.2; }
+  100% { opacity: 0; transform: translateY(-50px); }
 }
 
 @media (max-width: 640px) {
-  .actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 280px;
-  }
-  .btnPrimary, .btnGhost {
-    text-align: center;
-  }
+  .actions { flex-direction: column; width: 100%; max-width: 260px; }
+  .btnPrimary, .btnGhost { text-align: center; width: 100%; }
 }
