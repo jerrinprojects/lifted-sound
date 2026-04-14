@@ -2,10 +2,10 @@ import styles from './About.module.css'
 
 export default function About() {
   const values = [
-    { icon: '🎵', label: 'Connection', desc: 'Music that closes the distance between people.' },
-    { icon: '💜', label: 'Belonging', desc: 'A sound that says: you are not alone.' },
-    { icon: '⚡', label: 'Empowerment', desc: 'Songs that remind you of your own strength.' },
-    { icon: '🌍', label: 'Unity', desc: 'Bringing every generation together through singing.' },
+    { label: 'Connection', desc: 'Music that closes the distance between people.' },
+    { label: 'Belonging', desc: 'A sound that says: you are not alone.' },
+    { label: 'Empowerment', desc: 'Songs that remind you of your own strength.' },
+    { label: 'Unity', desc: 'Bringing every generation together through singing.' },
   ]
 
   return (
@@ -26,7 +26,6 @@ export default function About() {
         <div className={styles.values}>
           {values.map((v) => (
             <div key={v.label} className={styles.valueCard}>
-              <span className={styles.valueIcon}>{v.icon}</span>
               <div>
                 <strong className={styles.valueName}>{v.label}</strong>
                 <p className={styles.valueDesc}>{v.desc}</p>
