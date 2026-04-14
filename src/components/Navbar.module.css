@@ -1,4 +1,4 @@
-/* Navbar — Spotify-style: dark, compact, pill CTAs */
+/* Navbar — minimal editorial, light */
 
 .nav {
   position: fixed;
@@ -9,39 +9,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
-  transition: background 0.3s, padding 0.3s;
+  padding: 22px 48px;
+  transition: background 0.3s, padding 0.3s, border-color 0.3s;
 }
 
 .nav.scrolled {
-  background: rgba(14, 14, 14, 0.92);
-  backdrop-filter: blur(16px);
-  padding: 14px 40px;
-  border-bottom: 1px solid var(--border-sub);
+  background: rgba(243, 240, 234, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 14px 48px;
+  border-bottom: 1px solid var(--border);
 }
 
+/* Logo — matches brand purple */
 .logo {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 4px;
   color: var(--text);
 }
 
 .logo span {
-  color: var(--green);
+  color: var(--purple);
 }
 
 .links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
-/* Nav pill buttons — Spotify dark pill style */
 .links a {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   color: var(--text-sub);
   padding: 8px 16px;
@@ -50,31 +50,28 @@
 }
 
 .links a:hover {
-  background: var(--bg-mid);
+  background: var(--border-sub);
   color: var(--text);
 }
 
-/* Spotify Green CTA pill */
+/* Purple pill CTA */
 .cta {
-  background: var(--green) !important;
-  color: #000 !important;
+  background: var(--purple) !important;
+  color: #fff !important;
   font-weight: 700 !important;
-  letter-spacing: 1.4px !important;
+  letter-spacing: 1px !important;
   text-transform: uppercase;
-  font-size: 13px !important;
+  font-size: 12px !important;
   transition: opacity 0.15s, transform 0.15s !important;
 }
 
 .cta:hover {
-  background: var(--green) !important;
-  opacity: 0.88;
+  opacity: 0.88 !important;
   transform: scale(1.02);
-  color: #000 !important;
 }
 
 @media (max-width: 640px) {
   .nav { padding: 16px 20px; }
   .nav.scrolled { padding: 12px 20px; }
   .links li:first-child { display: none; }
-  .links { gap: 4px; }
 }

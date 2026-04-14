@@ -1,14 +1,14 @@
-/* Footer — Spotify-style: compact, dark, green logo accent */
+/* Footer — clean light editorial */
 
 .footer {
-  background: var(--bg-base);
-  border-top: 1px solid var(--border-sub);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
 }
 
 .inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 48px 40px 28px;
+  padding: 48px 48px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,14 +20,14 @@
 
 .logo {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: 4px;
   color: var(--text);
 }
 
 .logo em {
   font-style: normal;
-  color: var(--green);
+  color: var(--purple);
 }
 
 .tagline {
@@ -35,15 +35,15 @@
   color: var(--text-muted);
 }
 
-/* Nav pills — Spotify dark pills */
+/* Nav pills */
 .nav {
   display: flex;
   gap: 4px;
 }
 
 .nav a {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-sub);
   padding: 8px 16px;
   border-radius: 9999px;
@@ -51,14 +51,14 @@
 }
 
 .nav a:hover {
-  background: var(--bg-mid);
+  background: var(--border-sub);
   color: var(--text);
 }
 
 .bottom {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 16px 40px 36px;
+  padding: 16px 48px 36px;
   border-top: 1px solid var(--border-sub);
 }
 

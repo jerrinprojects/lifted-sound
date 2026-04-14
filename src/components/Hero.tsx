@@ -3,7 +3,8 @@ import styles from './Hero.module.css'
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.glow} />
+      {/* Ghosted background text — editorial style */}
+      <span className={styles.bgText} aria-hidden>LIFTED</span>
 
       <div className={styles.content}>
         <p className={styles.eyebrow}>✦ Music that lifts you up</p>

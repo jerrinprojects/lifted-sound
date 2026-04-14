@@ -1,10 +1,10 @@
-/* About — Spotify-inspired: dark surfaces, green accents only functional */
+/* About — light editorial, cream surface */
 
 .section {
-  padding: 100px 40px;
+  padding: 100px 48px;
   background: var(--bg-surface);
-  border-top: 1px solid var(--border-sub);
-  border-bottom: 1px solid var(--border-sub);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .inner {
@@ -17,11 +17,11 @@
 }
 
 .label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--purple);
   margin-bottom: 14px;
 }
 
@@ -37,18 +37,17 @@
 .body {
   font-size: 16px;
   color: var(--text-sub);
-  line-height: 1.75;
+  line-height: 1.8;
   margin-bottom: 32px;
   max-width: 420px;
 }
 
-/* Outlined pill button — Spotify secondary style */
+/* Outlined pill button */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   color: var(--text);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -59,35 +58,35 @@
 }
 
 .btn:hover {
-  border-color: var(--text);
-  background: rgba(255,255,255,0.05);
+  border-color: var(--purple);
+  color: var(--purple);
 }
 
-/* Values grid */
+/* Values */
 .values {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
-/* #181818 cards — Spotify dark card */
 .valueCard {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  background: var(--bg-mid);
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
   padding: 20px;
-  transition: background 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .valueCard:hover {
-  background: var(--bg-card);
-  box-shadow: var(--shadow-card);
+  border-color: var(--purple);
+  box-shadow: var(--shadow-sm);
 }
 
 .valueIcon {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1;
   flex-shrink: 0;
 }
