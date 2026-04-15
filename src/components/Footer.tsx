@@ -6,7 +6,11 @@ export default function Footer() {
       <div className={styles.glow} />
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <span className={styles.logo}>LIFTED <em>SOUND</em></span>
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/lifted-sound.firebasestorage.app/o/assets%2Flogo.png?alt=media"
+            alt="Lifted Sound"
+            className={styles.logoImg}
+          />
           <p className={styles.tagline}>Inspiring hope, belonging & strength — through music.</p>
         </div>
         <nav className={styles.nav}>

@@ -20,16 +20,20 @@
   border-bottom: 1px solid var(--border);
 }
 
-/* Logo — matches brand purple */
+/* Logo */
 .logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-  letter-spacing: 4px;
-  color: var(--text);
+  display: flex;
+  align-items: center;
 }
 
-.logo span {
-  color: var(--purple);
+.logoImg {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.nav.scrolled .logoImg {
+  height: 30px;
 }
 
 .links {

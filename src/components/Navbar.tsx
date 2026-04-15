@@ -13,7 +13,11 @@ export default function Navbar() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <a href="#" className={styles.logo}>
-        LIFTED <span>SOUND</span>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/lifted-sound.firebasestorage.app/o/assets%2Flogo.png?alt=media"
+          alt="Lifted Sound"
+          className={styles.logoImg}
+        />
       </a>
       <ul className={styles.links}>
         <li><a href="#releases">Releases</a></li>

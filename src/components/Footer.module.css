@@ -18,16 +18,10 @@
 
 .brand { display: flex; flex-direction: column; gap: 6px; }
 
-.logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
-  letter-spacing: 4px;
-  color: var(--text);
-}
-
-.logo em {
-  font-style: normal;
-  color: var(--purple);
+.logoImg {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .tagline {
