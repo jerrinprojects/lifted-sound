@@ -1,4 +1,4 @@
-/* Navbar — minimal editorial, light */
+/* Navbar — editorial, light */
 
 .nav {
   position: fixed;
@@ -9,12 +9,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 48px;
+  padding: 20px 48px;
   transition: background 0.3s, padding 0.3s, border-color 0.3s;
 }
 
 .nav.scrolled {
-  background: rgba(243, 240, 234, 0.92);
+  background: rgba(243, 240, 234, 0.94);
   backdrop-filter: blur(12px);
   padding: 14px 48px;
   border-bottom: 1px solid var(--border);
@@ -27,14 +27,17 @@
 }
 
 .logoImg {
-  height: 52px;
+  height: 72px;
   width: auto;
   display: block;
   object-fit: contain;
+  /* Remove white background — blends with light backgrounds */
+  mix-blend-mode: multiply;
+  transition: height 0.3s;
 }
 
 .nav.scrolled .logoImg {
-  height: 42px;
+  height: 56px;
 }
 
 .links {
@@ -68,6 +71,8 @@
   text-transform: uppercase;
   font-size: 12px !important;
   transition: opacity 0.15s, transform 0.15s !important;
+  /* mix-blend-mode resets for CTA so purple shows correctly */
+  mix-blend-mode: normal !important;
 }
 
 .cta:hover {
@@ -76,7 +81,9 @@
 }
 
 @media (max-width: 640px) {
-  .nav { padding: 16px 20px; }
-  .nav.scrolled { padding: 12px 20px; }
+  .nav { padding: 14px 20px; }
+  .nav.scrolled { padding: 10px 20px; }
+  .logoImg { height: 52px; }
+  .nav.scrolled .logoImg { height: 44px; }
   .links li:first-child { display: none; }
 }

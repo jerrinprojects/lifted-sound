@@ -19,11 +19,12 @@
 .brand { display: flex; flex-direction: column; gap: 6px; }
 
 .logoImg {
-  height: 48px;
+  height: 64px;
   width: auto;
-  max-width: 200px;
+  max-width: 240px;
   display: block;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .tagline {
